@@ -5,7 +5,7 @@ Jersey internally uses Jackon API
 This example demonstrate how to convert JSON into java object.
 1) JSON.json ( in a file) --> JAVA Object (POJO)
 2) jsonToString ( in a string variable) --> JAVA Object (POJO)
-3) JSON from URL ( URL returns JSON ( JSON Array )) --> JAVA Object (POJO)  // How to handle JSON Array
+3) JSON from URL ( URL returns JSON ( JSON Array )) --> JAVA Object (POJO)  // *How to handle JSON Array*
 
 
 **Prerequisite :**
