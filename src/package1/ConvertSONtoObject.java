@@ -15,22 +15,33 @@ public class ConvertSONtoObject {
 
 		ObjectMapper mapper = new ObjectMapper();
 		
-		//JSON from file to Object
+		
+		//******** JSON from file to Object ******** 
 		POJOObject objfromJSONFile = mapper.readValue(new File("resp.json"), POJOObject.class);
 		
 		System.out.println(objfromJSONFile);
-		System.out.println(objfromJSONFile.getName());
+		System.out.println("name : " + objfromJSONFile.getName());
 		
-		//JSON from String to Object
+		
+		//******** JSON from String to Object ******** 
 		String jsonInString = "{\"name\" : \"mike\", \"id\" : 11, \"roles\" : [ \"dev\", \"tester\" ]}";
 		POJOObject objfromJSONInString = mapper.readValue(jsonInString, POJOObject.class);
 		
 		System.out.println(objfromJSONInString);
-		System.out.println(objfromJSONInString.getId());
+		// Pretty Print
+		System.out.println( " ##### Pretty Print ##### ");
+		System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(objfromJSONInString));
+		System.out.println("id : " + objfromJSONInString.getId());
 		
-		//JSON from URL to Object. URL Return JSON array
+		
+		//******** JSON from URL to Object. URL Return JSON array ******** 
 		POJOforURLResponse[] objfromURLReturnJSON = mapper.readValue(new URL("http://localhost:8080/student/list"), POJOforURLResponse[].class);
 		System.out.println(objfromURLReturnJSON[1]);
+		
+		//Pretty print
+		System.out.println( " ##### Pretty Print ##### ");
+		String objfromURLReturnJSONWithPrettyPrint = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(objfromURLReturnJSON[1]);
+		System.out.println(objfromURLReturnJSONWithPrettyPrint);
 	}
 
 }

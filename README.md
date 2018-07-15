@@ -47,10 +47,15 @@ Output :
 
 ```
 POJOObject [name=mike, id=11, roles=[dev, tester]]
-mike
+name : mike
 POJOObject [name=mike, id=11, roles=[dev, tester]]
-11
-MyPOJO [id=2, firstName=firstname, lastName=lname, email=1111aaaa2@gmail.com, programme=prog, courses=[ca, cb]]
+ ##### Pretty Print ##### 
+{
+  "name" : "mike",
+  "id" : 11,
+  "roles" : [ "dev", "tester" ]
+}
+id : 11
 ```
 
 **For URL**
@@ -97,5 +102,15 @@ Input :
 ```
 Output 
 ```
-  MyPOJO [id=2, firstName=firstname, lastName=lname, email=1111aaaa2@gmail.com, programme=prog, courses=[ca, cb]]  
+MyPOJO [id=2, firstName=firstname, lastName=lname, email=1111aaaa2@gmail.com, programme=prog, courses=[ca, cb]]
+ ##### Pretty Print ##### 
+{
+  "id" : 2,
+  "firstName" : "firstname",
+  "lastName" : "lname",
+  "email" : "1111aaaa2@gmail.com",
+  "programme" : "prog",
+  "courses" : [ "ca", "cb" ]
+}
+
 ```
